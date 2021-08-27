@@ -1,12 +1,12 @@
 test_that(
-	"colorByScale works",
+	"quickColorByScale works",
 	{
 		mn <- 1
 		mx <- 1000
 		result <- sapply(
 			mn:mx,
 			function(i)
-				colorByScale(
+				quickColorByScale(
 					txt="a",
 					x=i,
 					lwr=mn,
