@@ -7,9 +7,6 @@ quickColor <- function(
 	bold=FALSE
 ){
 
-	# Validate Xterm if interactive ----
-	validateXterm()
-
 	# Validate colors ----
 	msgColor <- "Please supply valid xterm color numbers."
 	for(clrInst in c(fg,bg))

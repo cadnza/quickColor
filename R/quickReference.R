@@ -9,9 +9,6 @@ sp <- function(x,v){
 
 quickReference <- function(){
 
-	# Validate Xterm if interactive ----
-	validateXterm()
-
 	# Define header variables ----
 	sampleHeader <- "Color"
 	nSpacesForSample <- nchar(sampleHeader)

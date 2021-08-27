@@ -13,9 +13,6 @@ quickColorByScale <- function(
 	clrUpr=9L
 ){
 
-	# Validate Xterm if interactive ----
-	validateXterm()
-
 	# Validate x
 	if(!class(x)%in%c("numeric","integer"))
 		stop("Please supply a number value for x.")

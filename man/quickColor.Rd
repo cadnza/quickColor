@@ -63,6 +63,8 @@ The middle boundary \code{clrMid} is the color at the \emph{mean} of \code{clrLw
 Also note that setting \code{x} to a value outside \code{clrLwr:clrUpr} sets the dynamic color returned to either \code{clrLwr} or \code{clrUpr}, depending on which value \code{x} exceeds.
 
 With \code{quickColor} and \code{quickColorByScale}, you might notice that xterm colors \code{0} to \code{15} don't always behave as expected. These are system-defined colors, and they're treated as static colors in this package. To see their definitions, call \code{quickReference()} and note the \emph{Definition} field.
+
+\bold{NOTE:} \emph{This package doesn't validate for xterm, but it's untested for terminals that don't use 256 xterm colors. The \code{1.0.0} release did use validation, but it turned out not to work well for styling the R prompt, so the validation's been removed.}
 }
 \value{
 The \code{quickColor} and \code{quickColorByScale} functions return ANSI-escaped strings that must be handled with either \code{\link[base]{cat}} or a function with similar functionality (see Examples). \code{quickReference} returns nothing.
