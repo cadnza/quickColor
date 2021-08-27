@@ -1,6 +1,11 @@
 # Applies xterm color
 
-quickColor <- function(txt,fg=NA,bg=NA,bold=FALSE){
+quickColor <- function(
+	txt,
+	fg=NA,
+	bg=NA,
+	bold=FALSE
+){
 
 	# Validate colors
 	msgColor <- "Please supply valid Xterm color numbers."
