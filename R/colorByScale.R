@@ -1,4 +1,5 @@
-# Write function
+# Applies color on a scale--think Excel conditional formatting
+
 colorByScale <- function(
 	txt,
 	x,
