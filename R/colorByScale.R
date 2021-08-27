@@ -9,9 +9,6 @@ colorByScale <- function(
 	clrUpr=9L
 ){
 
-	# Read in data ----
-	clrs <- readRDS("C:/Users/jon.dayley/source/repos/shDotFiles/.shDotFileSupport/colorData.rds")
-
 	# Set function to get component value based on arguments ----
 	getCval <- function(componentLetter){
 		if(x<=lwr){
