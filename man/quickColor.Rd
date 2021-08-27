@@ -4,7 +4,7 @@
 \alias{quickReference}
 \title{Quick Colors for xterm}
 \description{
-\code{quickColor} wraps \code{crayon} and adds the ability to reference colors by xterm number, which can be especially useful if you're trying to match a specific color from xterm's palette.
+\code{quickColor} wraps \code{crayon} and adds the ability to reference colors by xterm number, which can be especially useful if you're trying to match a specific color from xterm's palette (though do see the caveat for system colors in Details).
 }
 \usage{
 quickColor(
@@ -84,6 +84,7 @@ The \code{quickColor} and \code{quickColorByScale} functions return ANSI-escaped
 }
 \examples{
 # quickColor ----
+
 final <- c()
 vals <- c(NA,0:15)
 fgVals <- vals
@@ -103,6 +104,7 @@ for(fgv in fgVals)
 cat(final,sep="")
 
 # quickColorByScale ----
+
 final <- c()
 mn <- 1
 mx <- 20
@@ -136,6 +138,7 @@ for(tar in targets)
 cat(final,sep="\n")
 
 # quickReference ----
+
 quickReference()
 }
 % Add one or more standard keywords, see file 'KEYWORDS' in the
