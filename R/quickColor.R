@@ -20,9 +20,9 @@ quickColor <- function(
 	# Apply styles ----
 	final <- txt
 	if(!is.na(fg))
-		final <- crayon::make_style(clrs$hex[clrs$xterm==fg])(final)
+		final <- crayon::make_style(clrs$hex[clrs$xterm==fg],colors=256)(final)
 	if(!is.na(bg))
-		final <- crayon::make_style(clrs$hex[clrs$xterm==bg],bg=TRUE)(final)
+		final <- crayon::make_style(clrs$hex[clrs$xterm==bg],bg=TRUE,colors=256)(final)
 	if(bold)
 		final <- crayon::bold(final)
 

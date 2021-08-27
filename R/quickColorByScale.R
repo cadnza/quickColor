@@ -116,7 +116,7 @@ quickColorByScale <- function(
 
 	# Dynamically color result ----
 	isBg <- target=="bg"
-	final <- crayon::make_style(finalHex,bg=isBg)(final)
+	final <- crayon::make_style(finalHex,bg=isBg,colors=256)(final)
 
 	# Return ----
 	return(final)
