@@ -1,4 +1,4 @@
 library(testthat)
-library(xtermQuick)
+library(quickColor)
 
-test_check("xtermQuick")
+test_check("quickColor")
