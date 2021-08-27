@@ -4,7 +4,7 @@
 \alias{quickReference}
 \title{Quick Colors for xterm}
 \description{
-\code{quickColor} wraps \code{crayon} and adds the ability to reference colors by xterm number, which can be especially useful if you're trying to match a specific color from xterm's palette (though do see the caveat for system colors in Details).
+\code{quickColor} wraps \code{crayon} and adds the ability to reference colors by xterm number, which can be especially useful if you're trying to match a specific color from xterm's palette (though do see the caveat for system colors in Details). And it only colors text in interactive mode, so it won't mess with your scripts.
 }
 \usage{
 quickColor(

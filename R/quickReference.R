@@ -9,7 +9,7 @@ sp <- function(x,v){
 
 quickReference <- function(){
 
-	# Validate Xterm ----
+	# Validate Xterm if interactive ----
 	validateXterm()
 
 	# Define header variables ----

@@ -7,7 +7,7 @@ quickColor <- function(
 	bold=FALSE
 ){
 
-	# Validate Xterm ----
+	# Validate Xterm if interactive ----
 	validateXterm()
 
 	# Validate colors ----
@@ -15,6 +15,10 @@ quickColor <- function(
 	for(clrInst in c(fg,bg))
 		if(!clrInst%in%c(NA,clrs$xterm))
 			stop(msgColor)
+
+	# Return unmodified text if not interactive ----
+	if(!interactive())
+		return(txt)
 
 	# Apply styles ----
 	final <- txt

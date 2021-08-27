@@ -13,7 +13,7 @@ quickColorByScale <- function(
 	clrUpr=9L
 ){
 
-	# Validate Xterm ----
+	# Validate Xterm if interactive ----
 	validateXterm()
 
 	# Validate x
@@ -47,6 +47,10 @@ quickColorByScale <- function(
 	for(clrInst in c(clrLwr,clrUpr))
 		if(is.na(clrInst))
 			stop(msgColor)
+
+	# Return unmodified text if not interactive ----
+	if(!interactive())
+		return(txt)
 
 	# Set function to get component value based on arguments ----
 	getCval <- function(componentLetter){
