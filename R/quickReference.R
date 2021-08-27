@@ -16,15 +16,15 @@ quickReference <- function(){
 	sampleHeader <- "Color"
 	nSpacesForSample <- nchar(sampleHeader)
 	sample <- strrep(" ",nSpacesForSample-1)
-	altHeader <- "Alternate"
+	altHeader <- "Definition"
 
 	# Assemble header ----
 	header <- quickColor(
 		paste0(
-			.sp("#",clrs$xterm),
-			.sp(sampleHeader,sample),
-			.sp("Name",clrs$name),
-			.sp(altHeader,clrs$name)
+			sp("#",clrs$xterm),
+			sp(sampleHeader,sample),
+			sp("Name",clrs$name),
+			sp(altHeader,clrs$name)
 		),
 		bold=TRUE
 	)
@@ -34,15 +34,13 @@ quickReference <- function(){
 		header,
 		sapply(
 			1:nrow(clrs),
-			function(i){
-				altText <- .sp(ifelse(clrs$system[i],clrs$hex[i],""),c(clrs$hex,altHeader))
+			function(i)
 				paste0(
-					quickColor(.sp(clrs$xterm[i],clrs$xterm),bold=TRUE),
-					quickColor(.sp(sample,sample),bg=clrs$xterm[i])," ",
-					quickColor(.sp(clrs$name[i],clrs$name),fg=clrs$xterm[i]),
-					crayon::make_style(clrs$hex[i])(altText)
+					quickColor(sp(clrs$xterm[i],clrs$xterm),bold=TRUE),
+					quickColor(sp(sample,sample),bg=clrs$xterm[i])," ",
+					quickColor(sp(clrs$name[i],clrs$name),fg=clrs$xterm[i]),
+					quickColor(sp(clrs$hex[i],c(clrs$hex,altHeader)),fg=clrs$xterm[i])
 				)
-			}
 		)
 	)
 
