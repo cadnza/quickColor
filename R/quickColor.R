@@ -8,7 +8,7 @@ quickColor <- function(
 ){
 
 	# Validate colors
-	msgColor <- "Please supply valid Xterm color numbers."
+	msgColor <- "Please supply valid xterm color numbers."
 	for(clrInst in c(fg,bg))
 		if(!clrInst%in%c(NA,clrs$xterm))
 			stop(msgColor)
