@@ -1,7 +1,7 @@
 Package: quickColor
 Type: Package
 Title: Quick and convenient coloring for xterm-compatible terminals
-Version: 1.0.2
+Version: 1.0.3
 Author: Jon Dayley
 Maintainer: Jon Dayley <jonathandayley@gmail.com>
 Description: Wraps around crayon to make coloring with xterm colors easy
