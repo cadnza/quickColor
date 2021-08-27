@@ -22,7 +22,7 @@ quickColor <- function(
 		final <- crayon::make_style(clrs$hex[clrs$xterm==fg])(final)
 	if(!is.na(bg))
 		final <- crayon::make_style(clrs$hex[clrs$xterm==bg],bg=TRUE)(final)
-	if(!is.na(bold))
+	if(bold)
 		final <- crayon::bold(final)
 
 	# Return ----
