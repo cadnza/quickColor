@@ -5,6 +5,9 @@ quickColorByScale <- function(
 	x,
 	lwr,
 	upr,
+	target="fg",
+	fg=NA,
+	bg=NA,
 	clrLwr=2L,
 	clrMid=11L,
 	clrUpr=9L
@@ -26,9 +29,19 @@ quickColorByScale <- function(
 			stop(msgBounds)
 	}
 
+	# Validate target ----
+	if(!target%in%c("fg","bg"))
+		stop("Please specify either 'bg' or 'fg' for a target.")
+
+	# Validate target/fg/bg matching ----
+	if(target=="fg"&!is.na(fg))
+		stop("You can't supply a static value for fg is target='fg'.")
+	if(target=="bg"&!is.na(bg))
+		stop("You can't supply a static value for bg is target='bg'.")
+
 	# Validate colors ----
 	msgColor <- "Please supply valid Xterm color numbers."
-	for(clrInst in c(clrLwr,clrMid,clrUpr))
+	for(clrInst in c(fg,bg,clrLwr,clrMid,clrUpr))
 		if(!clrInst%in%c(NA,clrs$xterm))
 			stop(msgColor)
 	for(clrInst in c(clrLwr,clrUpr))
@@ -94,8 +107,15 @@ quickColorByScale <- function(
 		collapse=""
 	)
 
-	# Color result ----
-	final <- crayon::make_style(finalHex)(txt)
+	# Assign final
+	final <- txt
+
+	# Statically color result ----
+	final <- quickColor(final,fg=fg,bg=bg)
+
+	# Dynamically color result ----
+	isBg <- target=="bg"
+	final <- crayon::make_style(finalHex,bg=isBg)(final)
 
 	# Return ----
 	return(final)
