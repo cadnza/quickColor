@@ -1,3 +1,5 @@
+# Applies xterm color
+
 quickColor <- function(x,fg=NA,bg=NA,bold=FALSE){
 	final <- x
 	if(!is.na(fg))

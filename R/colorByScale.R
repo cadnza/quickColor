@@ -1,4 +1,4 @@
-# Applies color on a scale--think Excel conditional formatting
+# Applies xterm color on a scale--think Excel conditional formatting
 
 quickColorByScale <- function(
 	txt,
