@@ -45,7 +45,9 @@ for(fgv in fgVals)
 			final <- c(final,result)
 		}
 cat(final,sep="")
+```
 
+```
 # quickColorByScale ----
 
 final <- c()
@@ -79,7 +81,9 @@ for(tar in targets)
 		final <- c(final,resultRow)
 	}
 cat(final,sep="\n")
+```
 
+```
 # quickReference ----
 
 quickReference()
