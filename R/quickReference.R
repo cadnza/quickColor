@@ -8,6 +8,7 @@ sp <- function(x,v){
 }
 
 quickReference <- function(){
+	validateXterm()
 	sampleHeader <- "Color"
 	nSpacesForSample <- nchar(sampleHeader)
 	sample <- strrep(" ",nSpacesForSample-1)
