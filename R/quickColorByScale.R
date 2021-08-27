@@ -10,14 +10,14 @@ quickColorByScale <- function(
 	clrUpr=9L
 ){
 
-	# Validate Xterm
+	# Validate Xterm ----
 	validateXterm()
 
 	# Validate x
 	if(!class(x)%in%c("numeric","integer"))
 		stop("Please supply a number value for x.")
 
-	# Validate bounds
+	# Validate bounds ----
 	msgBounds <- "Please supply integer bounds."
 	for(bound in c(lwr,upr)){
 		if(!class(bound)%in%c("numeric","integer"))
@@ -26,7 +26,7 @@ quickColorByScale <- function(
 			stop(msgBounds)
 	}
 
-	# Validate colors
+	# Validate colors ----
 	msgColor <- "Please supply valid Xterm color numbers."
 	for(clrInst in c(clrLwr,clrMid,clrUpr))
 		if(!clrInst%in%c(NA,clrs$xterm))
