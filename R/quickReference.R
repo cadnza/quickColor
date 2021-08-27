@@ -8,11 +8,17 @@ sp <- function(x,v){
 }
 
 quickReference <- function(){
+
+	# Validate Xterm ----
 	validateXterm()
+
+	# Define header variables ----
 	sampleHeader <- "Color"
 	nSpacesForSample <- nchar(sampleHeader)
 	sample <- strrep(" ",nSpacesForSample-1)
 	altHeader <- "Alternate"
+
+	# Assemble header ----
 	header <- quickColor(
 		paste0(
 			.sp("#",clrs$xterm),
@@ -22,6 +28,8 @@ quickReference <- function(){
 		),
 		bold=TRUE
 	)
+
+	# Add rows ----
 	final <- c(
 		header,
 		sapply(
@@ -37,5 +45,8 @@ quickReference <- function(){
 			}
 		)
 	)
+
+	# Cat ----
 	cat(final,sep="\n")
+
 }
