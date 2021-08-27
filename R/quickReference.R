@@ -1,6 +1,6 @@
 # Shows a color reference
 
-.sp <- function(x,v){
+sp <- function(x,v){
 	targetWidth <- max(nchar(c(x,v)))+1
 	nSpaces <- max(0,targetWidth-nchar(x))
 	final <- paste0(x,strrep(" ",nSpaces))
